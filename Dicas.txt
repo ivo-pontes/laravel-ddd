@@ -1,0 +1,37 @@
+Em DDD existrem 3 Namespaces:
+App
+Domain
+Support
+
+Dentro de App ficam todos os aplicativos do Laravel.
+As pastas Console, Exceptions, Http e Providers têm classes EM COMUM para todos
+os aplicativos do sistema, logo, podem estar em um core da aplicação.
+Exemplos de Aplicações:
+Api
+Web
+
+
+DTO - Data Transfer Objects
+
+Para usar de forma correta os DTOs, é necessário usar um pacote do laravel spatie:
+
+composer require spatie/data-transfer-object
+
+
+Actions é um Command e Handler Simplificado
+
+Actions podem ser compostas de duas maneiras, com construtor e executores.
+
+Resumindo, os models estão limpos, os DTOs garantem somente as informações solicitadas necessárias
+e as actions garantem os tipos necessários.
+
+php artisan optimize:clear
+php artisan config:cache
+
+Após configurar arquivos de rotas/configuração para os namespaces corretos, é necessário fazer a migração.
+
+Usar o pacote php-enum:
+
+composer require myclabs/php-enum
+
+Cada domínio tem seu próprio Enum, esse está sempre dentro do Domínio.
